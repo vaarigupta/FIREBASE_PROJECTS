@@ -1,8 +1,8 @@
 //console.log("Chat_app");
 var db = firebase.database();
 
-function readdata()
-{    	  var msg = document.getElementById("txt").value;
+function writedata()
+{    	  var msg = $("#txt").val();
    db.ref('messages/').push().set(
    {
       sender :"vaari",
@@ -13,20 +13,17 @@ $("#txt").val("");
 }
 
 
-db.ref('messages').on('value',function(msg)
+db.ref('messages').on("child_added",function(snap)
 { 
      
-	var message = msg.val();
-	for (var i in message)
-	{ 
-		var msg1 = message[i];
-		console.log(" message : " + msg1.message)
+	var mess = snap.val();
+		console.log(" message : " + mess.message)
 		$("#display").append(
 		`
-         <p> ${msg1.message} --- ${ msg1.sender}</p>
+         <p> ${mess.message} --- ${ mess.sender}</p>
 
 		`)
-	}
+	
 	
 	
 })
