@@ -23,7 +23,7 @@ db.ref('messages').on('value',function(msg)
 		console.log(" message : " + msg1.message)
 		$("#display").append(
 		`
-         <p> ${msg1.message}</p>
+         <p> ${msg1.message} --- ${ msg1.sender}</p>
 
 		`)
 	}
