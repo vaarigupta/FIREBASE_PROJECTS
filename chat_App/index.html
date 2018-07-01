@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CHAT_APP</title>
+
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBza1K4qEez2pAIAl8t4Wl0ij8H9WkGnxo",
+    authDomain: "chatapp-practice-d2231.firebaseapp.com",
+    databaseURL: "https://chatapp-practice-d2231.firebaseio.com",
+    projectId: "chatapp-practice-d2231",
+    storageBucket: "",
+    messagingSenderId: "736724846595"
+  };
+  firebase.initializeApp(config);
+</script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div>
+	<h1>Chat App</h1>
+	<div id="display"></div>
+	<input id="txt" placeholder="Type any message" type="text" name="text">
+	<button onclick="readdata()">Send</button>
+
+	</div>
+	<script src="main.js" type="text/javascript"></script>
+
+</body>
+</html>
