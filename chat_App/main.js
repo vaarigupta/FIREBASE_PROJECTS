@@ -2,13 +2,14 @@
 var db = firebase.database();
 
 function readdata()
-{  
-	  var msg = document.getElementById("txt").value;
+{    	  var msg = document.getElementById("txt").value;
    db.ref('messages/').push().set(
    {
-      sender : "vaari",
+      sender :"vaari",
       message: msg
    })
+   
+$("#txt").val("");
 }
 
 
@@ -17,8 +18,14 @@ db.ref('messages').on('value',function(msg)
      
 	var message = msg.val();
 	for (var i in message)
-	{
-		console.log("sender :" + message[i].sender + " message : " + message[i].message)
+	{ 
+		var msg1 = message[i];
+		console.log(" message : " + msg1.message)
+		$("#display").append(
+		`
+         <p> ${msg1.message}</p>
+
+		`)
 	}
 	
 	
